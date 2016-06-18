@@ -12,7 +12,7 @@ def paste():
     try:
         content = request.form['paste[body]']
 
-        if request.form['paste[restricted]'] == '1':
+        if 'paste[body]' in request.form:
             restricted = True
         else:
             restricted = False
