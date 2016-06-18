@@ -13,9 +13,9 @@ def paste():
         content = request.form['paste[body]']
 
         if 'paste[body]' in request.form:
-            restricted = True
-        else:
             restricted = False
+        else:
+            restricted = True
 
         lang = request.form['paste[lang]']
         expiration = expires_at(request.form['paste[expir]'])
