@@ -1,3 +1,4 @@
+import re
 from flask import request, redirect, make_response
 from paste import app
 
@@ -20,7 +21,9 @@ def paste():
         lang = request.form['paste[lang]']
         if lang == '0':
             lang = 'plain'
-            
+
+        lang = re.sub('[^0-9a-zA-Z]+', '', lang)
+
         expiration = expires_at(request.form['paste[expir]'])
 
         uid = PasteController().write(ip_addr=request.remote_addr,
