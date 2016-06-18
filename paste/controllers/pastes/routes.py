@@ -18,6 +18,9 @@ def paste():
             restricted = True
 
         lang = request.form['paste[lang]']
+        if lang == '0':
+            lang = 'plain'
+            
         expiration = expires_at(request.form['paste[expir]'])
 
         uid = PasteController().write(ip_addr=request.remote_addr,
