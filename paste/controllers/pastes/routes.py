@@ -13,10 +13,10 @@ def paste():
     try:
         content = request.form['paste[body]']
 
-        if 'paste[body]' in request.form:
-            restricted = False
-        else:
+        if 'paste[restricted]' in request.form and request.form['paste[restricted]'] == '1':
             restricted = True
+        else:
+            restricted = False
 
         lang = request.form['paste[lang]']
         if lang == '0':
