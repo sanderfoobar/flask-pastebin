@@ -1,0 +1,18 @@
+<div class="col-md-3 col-sm-3" id="recent">
+    <div class="panel panel-default">
+        <div class="panel-heading"><h4>Recent Public</h4></div>
+        <div class="panel-body">
+            {% if recent_public %}
+            <div id="menu_2">
+                <ul class="right_menu">
+                    {% for p in recent_public %}
+                        <li><a href="/paste/{{p.uid}}">{{p.syntax}}</a><span>{{p.ago}}</span></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% else %}
+
+            {% endif %}
+        </div>
+    </div>
+</div>
