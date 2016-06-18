@@ -24,7 +24,7 @@ Live example can be found [here](paste.cedsys.nl "cedsys").
     $ source bin/activate
     $ cd flask-pastebin/
     $ pip install -r requirements.txt
-    $ python
+    $ python paste.py
 
 
 ## Disclaimer
