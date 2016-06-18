@@ -5,7 +5,7 @@ A pastebin.com/pastie.org clone based on `flask`.
 
 ![Alt text](http://i.imgur.com/9Ij8vU3.png "Example")
 
-Live example can be found [here](paste.cedsys.nl "cedsys").
+Live example can be found [here](http://paste.cedsys.nl "cedsys").
 
 ## Features
 
