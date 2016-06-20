@@ -29,5 +29,5 @@ Live example can be found [here](http://paste.cedsys.nl "cedsys").
 
 ## Disclaimer
 
-Coded in 5 hours; the mileage you get out of this may very.
+Coded in 5 hours; the mileage you get out of this may vary.
 
