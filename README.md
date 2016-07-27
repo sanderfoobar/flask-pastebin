@@ -11,6 +11,7 @@ Live example can be found [here](http://paste.cedsys.nl "cedsys").
 
 - Paste expiration
 - Syntax highlighting
+- Image uploader
 - A sidebar with recent (public) pastes
 - Filesystem based - so no database required
 
@@ -29,5 +30,4 @@ Live example can be found [here](http://paste.cedsys.nl "cedsys").
 
 ## Disclaimer
 
-Coded in 5 hours; the mileage you get out of this may vary.
-
+Code quality is a piece of shit
