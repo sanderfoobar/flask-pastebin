@@ -1,4 +1,6 @@
 .idea/*
-paste/data/priv/*
-paste/data/pub/*
+paste/data/paste/priv/*
+paste/data/paste/pub/*
+paste/data/img/priv/*
+paste/data/img/pub/*
 *.pyc

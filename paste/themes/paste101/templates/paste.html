@@ -10,16 +10,30 @@
 <div class="container" id="main">
     <div class="row">
         {% include 'paste101/templates/header.html' %}
+    </div>
 
+    <div class="row">
         <div class="col-md-9 col-sm-9">
             <div class="panel panel-default">
                 <div class="panel-heading"><a href="/" class="pull-right">Homepage</a></div>
                 <div class="panel-body">
-                    <p class="legend" id="legend">
-                        <a href="/paste/{{paste.uid}}/raw" class="subtle">Raw</a>
-                    </p>
+                    {% if not multi %}
+                        <p class="legend" id="legend">
+                            <a href="/{{type}}/{{paste.uid}}/raw" class="subtle">Raw</a>
+                        </p>
+                    {% endif %}
+
                     <p>
-                        <pre><code class="{{paste.syntax}}">{{ paste.contents }}</code></pre>
+                        {% if type == "i" %}
+                            <center>
+                                {% for p in pastes %}
+                                    <img style="padding-bottom:50px;" src="/i/{{p.uid}}/raw"/>
+                                    <hr>
+                                {% endfor %}
+                            </center>
+                        {% elif type == "p" %}
+                            <pre><code class="{{paste.syntax}}">{{ paste.contents }}</code></pre>
+                        {% endif %}
                     </p>
                </div>
             </div>
