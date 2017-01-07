@@ -7,13 +7,17 @@ A pastebin.com/pastie.org clone based on `flask`.
 
 Live example can be found [here](http://paste.cedsys.nl "cedsys").
 
+## Disclaimer
+
+Speedcoded, so code quality is shit (but should be secure).
+
 ## Features
 
 - Paste expiration
 - Syntax highlighting
-- Image uploader
+- Image uploader (barely works)
 - A sidebar with recent (public) pastes
-- Filesystem based - so no database required
+- Filesystem based (no db)
 
 ## Installation
 
@@ -27,7 +31,26 @@ Live example can be found [here](http://paste.cedsys.nl "cedsys").
     $ pip install -r requirements.txt
     $ python paste.py
 
+## Paste screenshot from terminal with scrot, python-requests, libnotify, xclip
 
-## Disclaimer
+    $ sudo apt-get install python-requests, scrot, xclip, libnotify-bin, libnotify-dev
 
-Code quality is a piece of shit
+`/usr/bin/paste_screenshot_region.sh`:
+
+```
+#!/bin/bash
+nohup echo $(scrot -s -e 'printf $f | python -c "\$\(echo aW1wb3J0IHN5cztpbXBvcnQgcmVxdWVzdHM7YmFzZV91cmkgPSAiaHR0cHM6Ly9wYXN0ZS5jZWRzeXMubmwiO2ZpbGVzID0geyJmaWxlc1tdIjogb3BlbihzeXMuc3RkaW4ucmVhZCgpKX07ciA9IHJlcXVlc3RzLnBvc3QoIiVzL3Bhc3RlIiAlIGJhc2VfdXJpLCBmaWxlcz1maWxlcyk7c3lzLnN0ZG91dC53cml0ZSgiJXMlcy9yYXciICUgKGJhc2VfdXJpLCByLmpzb24oKVsidXJpIl0pKQ== | base64 -d\)" && mv $f ~/screenshots') | xclip -selection clipboard && notify-send -t 1000 $(echo "Pasted (clipboard)") &
+```
+
+`chmod +x`. openbox keyboard shortcut (CTRL-printscreen):
+
+```
+    <keybind key="C-Print">
+      <action name="Execute">
+        <execute>paste_screenshot_region.sh</execute>
+      </action>
+    </keybind>
+
+```
+
+    $ openbox --reconfigure
